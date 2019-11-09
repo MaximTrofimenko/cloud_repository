@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="rootNode" alignment="CENTER" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(#fff 0%, #eee 10%, #ddd 90%, #bbb 100%);" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.trofimenko.cloud.client.MainController">
+
+
+
+    <VBox prefHeight="400.0" prefWidth="680.0">
+
+        <HBox fx:id="rootNode2" alignment="CENTER" prefHeight="19.0" prefWidth="304.0">
+            <TextField fx:id="tfFileName" focusTraversable="false" prefHeight="25.0" prefWidth="496.0" promptText="Укажите имя файла на сервере, который хотите скачать" HBox.hgrow="ALWAYS" />
+            <Button onAction="#pressOnDownloadBtn" prefHeight="25.0" prefWidth="101.0" text="Скачать" />
+        </HBox>
+
+        <HBox fx:id="rootNode3" alignment="CENTER" prefHeight="19.0" prefWidth="304.0">
+            <TextField fx:id="zfFileName" focusTraversable="false" promptText="Укажите имя файла в хранилище, который хотите загрузить на сервер" HBox.hgrow="ALWAYS" />
+            <Button onAction="#pressOnUnloadBtn" prefHeight="25.0" prefWidth="101.0" text="Загрузить" />
+        </HBox>
+
+        <HBox alignment="CENTER">
+            <ListView fx:id="filesList" prefHeight="200.0" prefWidth="300.0" VBox.vgrow="ALWAYS" />
+            <ListView fx:id="serverFilesList" prefHeight="400.0" prefWidth="300.0" VBox.vgrow="ALWAYS" />
+        </HBox>
+        <HBox fx:id="rootNode4" alignment="CENTER" prefHeight="19.0" prefWidth="304.0">
+            <TextField fx:id="dFileName" focusTraversable="false" prefHeight="25.0" prefWidth="496.0" promptText="Укажите имя файла на клиенте, который хотите удалить" HBox.hgrow="ALWAYS" />
+            <Button onAction="#pressOnDelClientBtn" prefHeight="25.0" prefWidth="101.0" text="Удалить" />
+        </HBox>
+        <HBox fx:id="rootNode5" alignment="CENTER" prefHeight="19.0" prefWidth="304.0">
+            <TextField fx:id="ddFileName" focusTraversable="false" prefHeight="25.0" prefWidth="496.0" promptText="Укажите имя файла на сервере, который хотите удалить" HBox.hgrow="ALWAYS" />
+            <Button onAction="#pressOnDelServerBtn" prefHeight="25.0" prefWidth="101.0" text="Удалить" />
+        </HBox>
+
+        <HBox fx:id="rootNode6" alignment="CENTER" prefHeight="19.0" prefWidth="304.0">
+            <TextField fx:id="cFileName" focusTraversable="false" prefHeight="25.0" prefWidth="496.0" promptText="Создать файл.." HBox.hgrow="ALWAYS" />
+            <Button onAction="#pressOnCreateBtn" prefHeight="25.0" prefWidth="101.0" text="Создать" />
+        </HBox>
+
+
+
+    </VBox>
+
+
+
+</VBox>
