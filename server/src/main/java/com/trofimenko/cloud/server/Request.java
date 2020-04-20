@@ -48,7 +48,6 @@ public class Request {
         }
     }
 
-
     //получить список файлов на серваке
    static ArrayList<String> getArrFileInStorage() {
         ArrayList<String> arr = new ArrayList<>();

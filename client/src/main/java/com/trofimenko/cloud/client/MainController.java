@@ -35,7 +35,6 @@ public class MainController implements Initializable {
     TextField cFileName;
 
 
-
     //при запуске формы срабатывает метод инициалайз
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -73,9 +72,7 @@ public class MainController implements Initializable {
         refreshLocalFilesList();
         Network.sendMsg(new FileRequestInitial());
     }
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////команда на кнопках///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+    /*команда на кнопках*/
     //если хотим скачать файл С сервака. клиент должен послать серверу Request
     public void pressOnDownloadBtn(ActionEvent actionEvent) {
         //проверяем что имя файла указано длиннее чем ноль
@@ -126,7 +123,7 @@ public class MainController implements Initializable {
     public void refreshLocalFilesList() {
         updateUI(() -> {
             try {
-                //когда нам файл прилител то мы чистим список локальных файлов и
+                //когда нам файл прилетел то мы чистим список локальных файлов и
                 filesList.getItems().clear();
                //формируем список файлов повторно
                 Files.list(Paths.get("client_storage")).map(p -> p.getFileName().toString()).forEach(o -> filesList.getItems().add(o));
@@ -136,7 +133,6 @@ public class MainController implements Initializable {
         });
     }
     //мы не можем менять интерфейс не из потока JavaFx
-    //какой то прям замороченный метод
     //это метод написан для упрощения метода refreshLocalFilesList
     public static void updateUI(Runnable r) {
         if (Platform.isFxApplicationThread()) {
@@ -148,7 +144,6 @@ public class MainController implements Initializable {
 
     //тут обновить список файлов на серваке
     public void refreshLocalServerFilesList(FileListMessage flm){
-        //нужно подумать
         updateUI(() -> {
                //когда нам файл прилител то мы чистим список локальных файлов
                 serverFilesList.getItems().clear();
